@@ -30,7 +30,7 @@ while(True):
   response = urllib2.urlopen(request)
   #print response.read()
   if re.findall("on",response.read()):
-    s=smtplib.SMTP_SSL("smtp.qq.com", 465)
+    s=smtplib.SMTP_SSL("发送邮箱的smtp地址", 465)
     s.login(_user, _pwd)
     s.sendmail(_user, _to, msg.as_string())
     s.quit()
